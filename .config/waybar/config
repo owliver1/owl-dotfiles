@@ -1,0 +1,63 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin-top": 10,
+  "margin-left": 8,
+  "margin-right": 8,
+    "modules-left": ["custom/arch"],
+    "modules-center": ["clock"],
+    "modules-right": ["backlight", "pulseaudio", "bluetooth", "network", "battery"],
+    "custom/arch": {
+      "format": "",
+      "tooltip": false,
+      "on-click": "exec fuzzel"
+    },
+    "clock": {
+        "format": "<span color='#E7CBF2'>{:%H:%M} </span>",
+        "tooltip": true,
+        "on-click": "dunst",
+    },
+    "clock#utc": {
+        "format": "{:%H:%M UTC}",
+        "timezone": "Etc/UTC",
+        "on-click": "swaync-client -t -sw",
+    },
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "<span color='#E7CBF2'>{icon}</span>  {percent}%",
+      "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "pulseaudio": {
+      "format": "<span color='#E7CBF2'>{icon}</span>  {volume}%",
+      "format-muted": "",
+      "tooltip": false,
+      "format-icons": {
+        "headphone": "",
+        "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""]
+      },
+      "scroll-step": 1,
+    },
+    "bluetooth": {
+      "format": "<span color='#E7CBF2'></span> {status}",
+      "format-disabled": "<span color='#E7CBF2'></span> off", 
+      "format-connected": "<span color='#E7CBF2'> </span>{num_connections}",
+      "tooltip-format": "{status}",
+      "tooltip-format-enumerate-connected": "{device_alias}   {device_address}",
+      "on-click": "exec blueman-manager"
+    },
+    "network": {
+      "interface": "wlp0s20f3",
+      "format": "{ifname}",
+      "format-wifi": "<span color='#E7CBF2'>  </span>{essid}",
+      "format-ethernet": "{ipaddr}/{cidr}󰊗  ",
+      "format-disconnected": "<span color='#E7CBF2'>󰖪  </span>No Network",
+      "tooltip": false,
+      "on-click": "exec nmtui"
+    },
+    "battery": {
+      "format": "<span color='#E7CBF2'>{icon} </span>{capacity}%",
+      "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "format-charging": "<span color='#E7CBF2'>󰂄 </span> {capacity}%",
+      "tooltip": false,
+    },
+}

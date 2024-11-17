@@ -1,0 +1,25 @@
+[global]
+    font = ProggyClean Nerd Font 16
+    frame_width = 1
+    separator_height = 2
+    line_height = 24
+    notification_height = 80
+    transparency = 0
+
+[urgency_low]
+    timeout = 3
+    background = "#140920"
+    foreground = "#E7CBF2"
+    frame_color = "#140920"
+
+[urgency_normal]
+    timeout = 5
+    background = "#140920"
+    foreground = "#E7CBF2"
+    frame_color = "#140920"
+
+[urgency_critical]
+    timeout = 0
+    background = "#900000"
+    foreground = "#ffffff"
+    frame_color = "#ff0000"

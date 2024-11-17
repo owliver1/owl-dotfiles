@@ -1,0 +1,19 @@
+* {
+  border: none;
+  font-family: 'ProggyClean Nerd Font';
+  font-size: 24px;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+  min-height: 30px;
+}
+
+window#waybar {
+  background-color: #140920;
+}
+
+#custom-arch, #clock, #backlight, #pulseaudio, #bluetooth, #network, #battery{ 
+  background-color: #140920;
+  color: #E7CBF2;
+  padding: 5px 15px;
+}
+
+
